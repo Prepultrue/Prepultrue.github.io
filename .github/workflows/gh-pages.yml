@@ -25,14 +25,12 @@ jobs:
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.4.13
-        working-directory: ./docs_root
         with:
           hugo-version: 'latest'
           extended: true
 
       - name: Setup Node
         uses: actions/setup-node@v2
-        working-directory: ./docs_root
         with:
           node-version: '14'
 
@@ -52,9 +50,8 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        working-directory: ./docs_root
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./docs_root/public
