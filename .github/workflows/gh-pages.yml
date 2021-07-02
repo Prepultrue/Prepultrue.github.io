@@ -19,7 +19,7 @@ jobs:
       - name: Checkout child_docs repo
         uses: actions/checkout@v2
         with:
-          repository: 'https://github.com/Prepultrue/child_docs'
+          repository: 'Prepultrue/child_docs'
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
           path: child_docs
 
